@@ -56,7 +56,7 @@ Two distinct operational perspectives were audited, isolated, and evaluated:
 ---
 
 ## 5. Machine Learning Models Trained
-Five algorithm families were trained under 5-Fold Stratified Cross-Validation on the training partition (3,539 instances) and evaluated on the independent test partition (885 instances):
+Five supervised learning model families were evaluated alongside a stratified DummyClassifier baseline under 5-Fold Stratified Cross-Validation on the training partition (3,539 instances) and evaluated on the independent test partition (885 instances):
 1. **Baseline Model:** Stratified `DummyClassifier`
 2. **Logistic Regression:** Multinomial with L2 regularization
 3. **Decision Tree:** Constrained depth (`max_depth=6`)
@@ -120,4 +120,4 @@ Five algorithm families were trained under 5-Fold Stratified Cross-Validation on
 ---
 
 ## 9. Remaining Issues or Technical Debt
-- **None.** The project is 100% complete, reproducible, and published to GitHub at [Student-Academic-Success-Dropout-Prediction.](https://github.com/r3ban-hub/Student-Academic-Success-Dropout-Prediction.).
+- **None.** The project artifacts have been completed, documented, and published to GitHub for academic submission at [Student-Academic-Success-Dropout-Prediction.](https://github.com/r3ban-hub/Student-Academic-Success-Dropout-Prediction.). The repository is ready for academic submission.

@@ -4,7 +4,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![DOI: 10.24432/C5MC89](https://img.shields.io/badge/DOI-10.24432%2FC5MC89-orange.svg)](https://doi.org/10.24432/C5MC89)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Reproducibility: Verified](https://img.shields.io/badge/Reproducibility-100%25_Verified-success.svg)](#)
+[![Reproducibility: Verified](https://img.shields.io/badge/Reproducibility-Verified-success.svg)](#)
 
 > **Lead Data Scientist & Project Engineer:** Aryan  
 > **Project Type:** AI / Data Analytics / Machine Learning Academic Internship Project  
@@ -14,7 +14,7 @@
 ---
 
 ## 1. Project Overview
-Student dropout in higher education is a complex challenge with severe personal, institutional, and societal implications. This repository houses an end-to-end, scientifically validated, reproducible machine learning system that predicts one of three student outcomes:
+Student dropout in higher education is a complex challenge with severe personal, institutional, and societal implications. This repository houses an end-to-end, reproducible machine learning project that predicts one of three student outcomes:
 1. **Dropout:** Student left the institution without finishing degree requirements.
 2. **Enrolled:** Student remains actively enrolled beyond standard course duration.
 3. **Graduate:** Student successfully completed their degree program.
@@ -41,7 +41,7 @@ Key technical and operational challenges addressed:
 - [x] Ingest and audit the official UCI 697 dataset (4,424 records, 36 predictors, 0 missing values, 0 duplicates).
 - [x] Perform exhaustive Exploratory Data Analysis (EDA) uncovering academic, financial, and demographic attrition drivers.
 - [x] Build isolated scikit-learn preprocessing pipelines (`StandardScaler`, `OneHotEncoder`).
-- [x] Train and validate 5 model families with 5-Fold Stratified Cross-Validation.
+- [x] Train and validate five supervised learning model families alongside a stratified DummyClassifier baseline using 5-Fold Stratified Cross-Validation.
 - [x] Compare Perspective A (Pre-Enrollment) vs. Perspective B (Academic-Progress).
 - [x] Extract global explainability metrics via tree-based Gini importance and permutation analysis.
 - [x] Generate a 20-section professional Microsoft Word report (`Aryan_StudentAcademicSuccessReport.docx`).
@@ -185,17 +185,17 @@ python -m nbconvert --execute --inplace Aryan_StudentAcademicSuccessPrediction.i
 ### Champion Model: Random Forest (Perspective B)
 - **Test Accuracy:** 74.92%
 - **Test Macro-F1:** 0.7069
-- **Dropout Recall:** 70.42% (Identifies >70% of students who withdraw)
-- **Graduate Recall:** 82.81% (Correctly recognizes over 82% of degree completers)
-- **Enrolled Recall:** 61.01% (Significantly outperforms standard models on minority class)
+- **Dropout Recall:** 70.42% (Achieves 70.42% recall for the Dropout class on the held-out test set.)
+- **Graduate Recall:** 82.81% (Achieves 82.81% recall for the Graduate class on the held-out test set.)
+- **Enrolled Recall:** 61.01% (Achieves 61.01% recall for the minority Enrolled class on the held-out test set.)
 
 ---
 
 ## 11. Key Findings & Diagnostic Insights
 1. **Academic Checkpoints Outweigh Pre-Entry Factors:** Incorporating first-year academic milestones raises predictive accuracy by **+15.8 percentage points** (from 59.10% to 74.92%) and Macro-F1 from 0.5506 to 0.7069.
-2. **Fee Payment Default as an Acute Warning:** Students who fall behind on tuition fees (`Tuition fees up to date = 0`) suffer an **86.55% dropout rate**. Immediate automated alerts from the bursar's office should trigger emergency financial aid outreach.
-3. **Second-Semester Course Approvals are Decisive:** The number of approved units in semester 2 is the single most predictive feature. Over 75% of dropouts fail to pass more than 2 courses in their second semester.
-4. **Vulnerability Among Mature Students:** Enrollees over age 25 experience a 52.8% dropout rate (vs. 25.4% among 18-21 year olds), highlighting the need for evening tutoring and child-care assistance.
+2. **Tuition Fee Status Shows a Strong Association with Dropout:** Students who fall behind on tuition fees (`Tuition fees up to date = 0`) exhibit an observed **86.55% dropout rate**. This association could be explored as a potential signal for targeted financial-support interventions.
+3. **Second-Semester Course Approvals are Strong Predictive Features:** The number of approved units in semester 2 is the single most predictive feature. Over 75% of dropouts fail to pass more than 2 courses in their second semester.
+4. **Higher Observed Dropout Rates Among Older Students:** Enrollees over age 25 experience a 52.8% observed dropout rate (vs. 25.4% among 18-21 year olds), highlighting the value of tailored academic advising and support.
 
 ---
 

@@ -54,7 +54,7 @@ The 36 predictor features span 7 distinct operational and contextual categories:
    - `Mother's occupation` (categorical/integer codes 0–194)
    - `Father's occupation` (categorical/integer codes 0–195)
 
-3. **Academic Admission & Prior Education (7 features):**
+3. **Academic Admission & Prior Education (8 features):**
    - `Application mode` (categorical/integer codes 1–57)
    - `Application order` (ordinal integer 0–9; preference order)
    - `Course` (categorical degree program codes 33–9991; 17 distinct programs)
